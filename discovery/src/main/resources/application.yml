@@ -1,0 +1,26 @@
+server:
+  port: 8761
+
+
+eureka:
+  instance:
+    hostname: localhost
+    #服务失效时间,s
+    lease-expiration-duration-in-seconds: 15
+
+  server:
+    #清理无效节点的时间间隔,ms
+    eviction-interval-timer-in-ms: 20000
+    enable-self-preservation: true
+
+
+  client:
+    #eureka本身不需要注册到自己
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      default-zone: http://localhost:${server.port}/eureka/
+
+spring:
+  application:
+    name: spring-cloud-server
