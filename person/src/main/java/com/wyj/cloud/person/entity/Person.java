@@ -1,5 +1,7 @@
 package com.wyj.cloud.person.entity;
 
+import lombok.Data;
+
 /**
  * @Description:
  * @Author: Jungle.Wu
@@ -11,4 +13,7 @@ public class Person {
     String name;
     String age;
 
+    public Person(String persopnName) {
+        this.name = persopnName;
+    }
 }

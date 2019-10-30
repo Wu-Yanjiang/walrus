@@ -1,8 +1,13 @@
 package com.wyj.cloud.person.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.wyj.cloud.person.entity.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Description:
@@ -13,7 +18,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class PersonController {
 
+    @RequestMapping(value = "save", method = RequestMethod.POST)
     public List<Person> savePerson(@RequestBody String persopnName) {
-
+        Person person = new Person(persopnName);
+        List<Person> people = new ArrayList<>();
+        people.add(person);
+        return people;
     }
 }
