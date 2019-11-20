@@ -17,6 +17,7 @@ eureka:
   client:
     #eureka本身不需要注册到自己
     register-with-eureka: false
+    # 注册中心用于维护服务实例，不需要检索服务
     fetch-registry: false
     service-url:
       default-zone: http://localhost:${server.port}/eureka/
